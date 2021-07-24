@@ -12,8 +12,9 @@ const mongoConnection = () => {
     .connect(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useFindAndModify: false,
     })
-    .then((db) => console.log("db connected"))
+    .then((_) => console.log("db connected"))
     .catch((err) => console.log(err));
 };
 module.exports = {
