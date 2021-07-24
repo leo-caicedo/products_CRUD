@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
   },
   price: {
     type: Number,
-    require: true,
+    required: true,
     validate(value) {
       if (value < 0) throw new Error("price must be a positive decimal.");
     },
