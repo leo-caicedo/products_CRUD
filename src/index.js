@@ -2,11 +2,13 @@ const express = require("express");
 
 const app = express();
 const { mongoConnection } = require("./db/mongo");
+const { logErrors, errorHandler } = require("./utils/middleware/errorHandler");
 
 // required routes
 const productsAPI = require("./routes");
 
 // middleware
+
 app.use(express.json());
 
 // db
@@ -19,6 +21,10 @@ productsAPI(app);
 app.get("/", function (req, res) {
   res.redirect("/api/products");
 });
+
+// errorHandler
+app.use(logErrors);
+app.use(errorHandler);
 
 // server
 app.listen(3000, () => {
