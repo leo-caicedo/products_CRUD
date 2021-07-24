@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const { mongoConnection } = require("./db/mongo");
 const { logErrors, errorHandler } = require("./utils/middleware/errorHandler");
+const notFoundHandler = require("./utils/middleware/notFoundHandler");
 
 // required routes
 const productsAPI = require("./routes");
@@ -21,6 +22,9 @@ productsAPI(app);
 app.get("/", function (req, res) {
   res.redirect("/api/products");
 });
+
+// Catch 404
+app.use(notFoundHandler);
 
 // errorHandler
 app.use(logErrors);
