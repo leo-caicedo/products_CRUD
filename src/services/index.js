@@ -1,5 +1,5 @@
 // model
-const { Product } = require("../models/Product");
+const Product = require("../models/Product");
 
 class ProductsService {
   async getProducts() {
@@ -20,7 +20,9 @@ class ProductsService {
   }
 
   async updateProduct(id, data) {
-    const updatedProduct = await Product.findByIdAndUpdate(id, data);
+    const updatedProduct = await Product.findByIdAndUpdate(id, data, {
+      new: true,
+    });
     await updatedProduct.save();
 
     return updatedProduct;

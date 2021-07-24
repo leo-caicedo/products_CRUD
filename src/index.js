@@ -4,7 +4,7 @@ const app = express();
 const { mongoConnection } = require("./db/mongo");
 
 // required routes
-const routes = require("./routes");
+const productsAPI = require("./routes");
 
 // middleware
 app.use(express.json());
@@ -13,7 +13,7 @@ app.use(express.json());
 mongoConnection();
 
 // routes
-app.use("/api/products", routes);
+productsAPI(app);
 
 // redirect
 app.get("/", function (req, res) {
