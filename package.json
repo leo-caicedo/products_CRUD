@@ -1,0 +1,33 @@
+{
+  "name": "products_crud",
+  "version": "1.0.0",
+  "description": "A basic CRUD of products",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leo-caicedo/products_CRUD.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "API",
+    "mongodb"
+  ],
+  "author": "Leonardo Caicedo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leo-caicedo/products_CRUD/issues"
+  },
+  "homepage": "https://github.com/leo-caicedo/products_CRUD#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
